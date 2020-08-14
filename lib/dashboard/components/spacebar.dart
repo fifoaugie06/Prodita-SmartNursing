@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Spacebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('HH').format(now);
+
     return FlexibleSpaceBar(
       collapseMode: CollapseMode.parallax,
       background: Container(
@@ -50,7 +54,7 @@ class Spacebar extends StatelessWidget {
               children: <Widget>[
                 RaisedButton(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
+                    borderRadius: BorderRadius.circular(16.0),
                   ),
                   onPressed: () {},
                   color: Color(0xFFFF4C58),
@@ -58,7 +62,7 @@ class Spacebar extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 8, bottom: 8),
                     child: Text(
-                      "Good Morning",
+                      makeGreetingFromNow(formattedDate),
                       style: TextStyle(fontSize: 13),
                     ),
                   ),
@@ -69,5 +73,22 @@ class Spacebar extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String makeGreetingFromNow(String formattedDate) {
+    String greeting = "Selamat ";
+    int format = int.parse(formattedDate);
+
+    if (format >= 0 && format <= 10) {
+      greeting += "Pagi";
+    } else if (format > 10 && format <= 14) {
+      greeting += "Siang";
+    } else if (format > 14 && format <= 18) {
+      greeting += "Sore";
+    } else {
+      greeting += "Malam";
+    }
+
+    return greeting;
   }
 }
