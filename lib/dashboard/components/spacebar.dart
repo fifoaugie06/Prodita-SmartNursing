@@ -39,24 +39,29 @@ class Spacebar extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.only(top: 12.0),
-              child: Text(
-                'Prodita Smart Nursing merupakan aplikasi yang didesain untuk bla '
-                'bla bla bla bla bla bla bla bla bla bla bla bla bla bla '
-                'bla bla bla bla bla bla bla bla bla',
-                style: TextStyle(color: Color(0xFF7A77B0), fontSize: 14),
+              child: Padding(
+                padding: const EdgeInsets.only(right: 30),
+                child: Text(
+                  'Prodita Smart Nursing merupakan aplikasi yang didesain untuk bla '
+                  'bla bla bla bla bla bla bla bla bla bla bla bla bla bla '
+                  'bla bla bla bla bla bla bla bla bla',
+                  style: TextStyle(color: Color(0xFF7A77B0), fontSize: 14),
+                ),
               ),
             ),
             SizedBox(
-              height: 12,
+              height: 16,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 RaisedButton(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16.0),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   color: Color(0xFFFF4C58),
                   textColor: Colors.white,
                   child: Padding(
