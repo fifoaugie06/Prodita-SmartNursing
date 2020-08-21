@@ -42,7 +42,7 @@ class _NavDrawerState extends State<NavDrawer> {
                           textAlign: TextAlign.start,
                         ),
                         Text(
-                          'Lorem ipsum dolor sit \namet, constetur',
+                          'Share aplikasi ini ke teman \ndi sekitar anda',
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
@@ -83,7 +83,7 @@ class _NavDrawerState extends State<NavDrawer> {
                           textAlign: TextAlign.start,
                         ),
                         Text(
-                          'Lorem ipsum dolor sit \namet, constetur',
+                          'Informasi detail tentang \naplikasi Smart Nursing',
                           style: TextStyle(
                             fontSize: 16,
                             color: Colors.white,
@@ -112,31 +112,32 @@ class _NavDrawerState extends State<NavDrawer> {
               ),
               onTap: () {
                 showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: new Text("Konfirmasi"),
-                        content:
-                            new Text("Anda yakin akan keluar dari aplikasi ?"),
-                        actions: <Widget>[
-                          new FlatButton(
-                            child: new Text(
-                              "CANCEL",
-                              style: TextStyle(color: Color(0xFFFF4C58)),
-                            ),
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: new Text("Konfirmasi"),
+                      content:
+                          new Text("Anda yakin akan keluar dari aplikasi ?"),
+                      actions: <Widget>[
+                        new FlatButton(
+                          child: new Text(
+                            "CANCEL",
+                            style: TextStyle(color: Color(0xFFFF4C58)),
                           ),
-                          new FlatButton(
-                            child: new Text("ACCEPT"),
-                            onPressed: () {
-                              exit(0);
-                            },
-                          ),
-                        ],
-                      );
-                    });
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                        new FlatButton(
+                          child: new Text("ACCEPT"),
+                          onPressed: () {
+                            exit(0);
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
               },
             ),
           ),
@@ -144,7 +145,7 @@ class _NavDrawerState extends State<NavDrawer> {
             height: 180,
           ),
           Text(
-            'Copyright \u00a9 2020\n Prodita - Smart Nursing\nAuthor\'s Faftech',
+            'Copyright \u00a9 2020\n Prodita - Smart Nursing',
             style: TextStyle(
                 color: Colors.white70, letterSpacing: 1.5, height: 1.5),
             textAlign: TextAlign.center,
