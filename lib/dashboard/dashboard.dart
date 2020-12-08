@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:proditasmartnursing/dashboard/components/droprate.dart';
 import 'package:proditasmartnursing/dashboard/components/spacebar.dart';
-import 'package:proditasmartnursing/dashboard/feature/drugsdosage.dart';
-import 'package:proditasmartnursing/dashboard/feature/intravenous.dart';
-import 'package:proditasmartnursing/dashboard/feature/needsoffluids.dart';
+import 'package:proditasmartnursing/dashboard/components/timeover.dart';
 import 'package:proditasmartnursing/navdrawer/navdrawer.dart';
 
 class Dashboard extends StatefulWidget {
@@ -17,58 +16,57 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: Theme(
-        data: Theme.of(context).copyWith(canvasColor: Color(0xff2A2A2A)),
-        child: NavDrawer(),
-      ),
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            leading: IconButton(
-              icon: Icon(Icons.sort),
-              onPressed: () => _scaffoldKey.currentState.openDrawer(),
-            ),
-            expandedHeight: 280.0,
-            floating: true,
-            pinned: true,
-            snap: false,
-            elevation: 50,
-            backgroundColor: Color(0xFF473E97),
-            flexibleSpace: Spacebar(),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 16, right: 16, top: 32, bottom: 22),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    'Calculate',
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
-                  ),
-                  SizedBox(
-                    height: 22,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      DrugsDosage(),
-                      SizedBox(
-                        width: 8,
+      // drawer: Theme(
+      //   data: Theme.of(context).copyWith(canvasColor: Color(0xff2A2A2A)),
+      //   child: NavDrawer(),
+      // ),
+      body: DefaultTabController(
+        length: 2,
+        child: NestedScrollView(
+          headerSliverBuilder: (context, value) {
+            return [
+              SliverAppBar(
+                expandedHeight: 280.0,
+                floating: true,
+                pinned: true,
+                snap: false,
+                elevation: 50,
+                backgroundColor: Color(0xFF473E97),
+                flexibleSpace: Spacebar(),
+                bottom: PreferredSize(
+                  preferredSize: Size.fromHeight(100.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xFF473E97),
+                      border: Border(
+                        top: BorderSide(
+                          color: Color(0xFF7A77B0),
+                        ),
                       ),
-                      NeedsOfFluids(),
-                    ],
+                    ),
+                    child: TabBar(
+                      indicatorColor: Color(0xFFFF4C58),
+                      tabs: [
+                        Tab(
+                          text: "DROP RATE",
+                        ),
+                        Tab(
+                          text: "TIME OVER",
+                        ),
+                      ],
+                    ),
                   ),
-                  Intravenous(),
-                  Container(
-                    width: 100,
-                    height: 1000,
-                  )
-                ],
+                ),
               ),
-            ),
+            ];
+          },
+          body: TabBarView(
+            children: [
+              DropRate(),
+              TimeOver(),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

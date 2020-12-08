@@ -14,9 +14,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-        statusBarColor: Color(0xFF473E97)
-    ));
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Color(0xFF473E97),
+      ),
+    );
 
     return MaterialApp(
       title: 'Prodita Smart Nursing',

@@ -15,16 +15,13 @@ class Spacebar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              margin: EdgeInsets.only(top: 70.0),
-              child: Text(
-                'Smart Nursing',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600),
-              ),
+            Text(
+              'Smart Nursing',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600),
             ),
             Container(
               margin: EdgeInsets.only(top: 22.0),
@@ -42,9 +39,8 @@ class Spacebar extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(right: 30),
                 child: Text(
-                  'Prodita Smart Nursing merupakan aplikasi yang didesain untuk bla '
-                  'bla bla bla bla bla bla bla bla bla bla bla bla bla bla '
-                  'bla bla bla bla bla bla bla bla bla',
+                  'Prodita Smart Nursing merupakan aplikasi yang didesain untuk '
+                      'membantu dalam perhitungan jumlah tetesan infus per menit.',
                   style: TextStyle(color: Color(0xFF7A77B0), fontSize: 14),
                 ),
               ),
@@ -52,28 +48,28 @@ class Spacebar extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                RaisedButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.0),
-                  ),
-                  onPressed: () {
-
-                  },
-                  color: Color(0xFFFF4C58),
-                  textColor: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 8, bottom: 8),
-                    child: Text(
-                      makeGreetingFromNow(formattedDate),
-                      style: TextStyle(fontSize: 13),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.start,
+            //   children: <Widget>[
+            //     RaisedButton(
+            //       shape: RoundedRectangleBorder(
+            //         borderRadius: BorderRadius.circular(16.0),
+            //       ),
+            //       onPressed: () {
+            //
+            //       },
+            //       color: Color(0xFFFF4C58),
+            //       textColor: Colors.white,
+            //       child: Padding(
+            //         padding: const EdgeInsets.only(top: 8, bottom: 8),
+            //         child: Text(
+            //           makeGreetingFromNow(formattedDate),
+            //           style: TextStyle(fontSize: 13),
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       ),
