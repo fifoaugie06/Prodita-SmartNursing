@@ -14,9 +14,9 @@ class _DropRateState extends State<DropRate> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 32, right: 32, top: 32),
-      child: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.only(left: 32, right: 32, top: 32),
         child: Column(
           children: [
             TextFormField(
